@@ -2,6 +2,8 @@ import { ProjectCard } from "@/components/ProjectCard";
 import game from "@/assets/img/game.jpg";
 import getthawha from "@/assets/img/getthawha.jpg";
 import pokebay from "@/assets/img/pokebay.jpg";
+import calendar from "@/assets/img/calendar.jpg";
+import thira from "@/assets/img/thira.jpg";
 
 const projects = [
     {
@@ -27,24 +29,17 @@ const projects = [
     },
     {
         id: 4,
-        title: "Project Delta",
-        description: "Mobile-first responsive landing page design",
-        image: game,
-        link: "https://example.com/project-delta",
+        title: "Calendar",
+        description: "A serverless(firebase) web application for modern event and schedule management. The frontend is built with React, responsive interface that allows users to toggle between Month, Week, and Day views.",
+        image: calendar,
+        link: "https://calendar.iamgot.com/",
     },
     {
         id: 5,
-        title: "Project Epsilon",
-        description: "Portfolio website with modern animations",
-        image: game,
-        link: "https://example.com/project-epsilon",
-    },
-    {
-        id: 6,
-        title: "Project Zeta",
-        description: "SaaS application with subscription management",
-        image: game,
-        link: "https://example.com/project-zeta",
+        title: "Thira",
+        description: "A serverless social media application built with React and Firebase. The project features a real-time feed, user profiles, and CRUD functionality for posts. It leverages Firebase Authentication for secure login and Cloud Firestore for all application data. **no server for uploads (Fullstack role)",
+        image: thira,
+        link: "https://thira.iamgot.com/",
     },
 ];
 
