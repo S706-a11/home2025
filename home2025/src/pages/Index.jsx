@@ -4,6 +4,7 @@ import getthawha from "@/assets/img/getthawha.jpg";
 import pokebay from "@/assets/img/pokebay.jpg";
 import calendar from "@/assets/img/calendar.jpg";
 import thira from "@/assets/img/thira.jpg";
+import dogcat from "@/assets/img/dogcat.jpg";
 
 const projects = [
     {
@@ -41,6 +42,13 @@ const projects = [
         image: thira,
         link: "https://thira.iamgot.com/",
     },
+    {
+        id: 6,
+        title: "Dog or Cat",
+        description: "A web-based AI tool that can accurately classify an uploaded image as either a 'Dog' or a 'Cat.' This project is for learning purposes, utilizing a pre-trained machine learning model to perform image recognition tasks. (react,python)",
+        image: dogcat,
+        link: "https://dog_or_cat.iamgot.com/",
+    }
 ];
 
 const Index = () => {
