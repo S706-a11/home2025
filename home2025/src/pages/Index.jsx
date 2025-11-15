@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/ProjectCard";
+import FallingText from "@/components/FallingText";
 import game from "@/assets/img/game.jpg";
 import getthawha from "@/assets/img/getthawha.jpg";
 import pokebay from "@/assets/img/pokebay.jpg";
@@ -53,9 +54,10 @@ const projects = [
 
 const Index = () => {
     return (
-        <div className="min-h-screen bg-[hsl(var(--background))]">
+        <div className="min-h-screen bg-[hsl(var(--background))] relative">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="mb-16">
+
                     <h1 className="mb-4 text-4xl font-bold tracking-tight text-[hsl(var(--foreground))] sm:text-5xl">
                         Projects
                     </h1>
@@ -74,6 +76,19 @@ const Index = () => {
                             link={project.link}
                         />
                     ))}
+                </div>
+                <div className="fixed inset-0 h-screen w-screen pointer-events-none z-50">
+                    <FallingText
+                        text="Welcome to my portfolio. I build modern web applications with creative technologies."
+                        highlightWords={["Welcome", "portfolio", "build", "modern", "creative"]}
+                        highlightClass="text-blue-500 font-bold"
+                        trigger="auto"
+                        backgroundColor="transparent"
+                        wireframes={false}
+                        gravity={0.56}
+                        fontSize="1.5rem"
+                        mouseConstraintStiffness={0.9}
+                    />
                 </div>
             </div>
         </div>
