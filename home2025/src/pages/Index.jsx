@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/ProjectCard";
+import { ThreeDCarousel } from "@/components/ui/3d-carousel";
 import FallingText from "@/components/FallingText";
 import game from "@/assets/img/game.jpg";
 import getthawha from "@/assets/img/getthawha.jpg";
@@ -54,30 +54,11 @@ const projects = [
 
 const Index = () => {
     return (
-        <div className="min-h-screen bg-[hsl(var(--background))] relative">
-            <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-                <div className="mb-16">
-
-                    <h1 className="mb-4 text-4xl font-bold tracking-tight text-[hsl(var(--foreground))] sm:text-5xl">
-                        Projects
-                    </h1>
-                    <p className="text-lg text-[hsl(var(--muted-foreground))]">
-                        Kitiipong Jakkham <a href="https://github.com/S706-a11/" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </p>
-                </div>
-
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            title={project.title}
-                            description={project.description}
-                            image={project.image}
-                            link={project.link}
-                        />
-                    ))}
-                </div>
-                <div className="fixed inset-0 h-screen w-screen pointer-events-none z-50">
+        <div className="min-h-screen bg-[hsl(var(--background))] relative overflow-hidden">
+            <div className="absolute inset-0">
+                <ThreeDCarousel projects={projects} />
+            </div>
+            <div className="fixed inset-0 h-screen w-screen pointer-events-none z-50">
                     <FallingText
                         text="Welcome to my portfolio. I build modern web applications with creative technologies."
                         highlightWords={["Welcome", "portfolio", "build", "modern", "creative"]}
@@ -89,7 +70,6 @@ const Index = () => {
                         fontSize="1.5rem"
                         mouseConstraintStiffness={0.9}
                     />
-                </div>
             </div>
         </div>
     );
