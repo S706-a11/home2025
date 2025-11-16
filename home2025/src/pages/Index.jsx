@@ -77,14 +77,20 @@ const Index = () => {
                 <ThreeDCarousel projects={projects} />
             </div>
 
-            {/* ASCII title overlay */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] h-48 z-40 pointer-events-none">
+            {/* ASCII title overlay clickable to GitHub */}
+            <a
+                href="https://github.com/S706-a11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-6 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] h-48 z-40 cursor-pointer"
+                aria-label="Open GitHub profile"
+            >
                 <ASCIIText
-                    text='My Projects'
+                    text='Github'
                     enableWaves={true}
                     asciiFontSize={3}
                 />
-            </div>
+            </a>
         </div>
     );
 };
