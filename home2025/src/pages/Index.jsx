@@ -1,6 +1,6 @@
 import { ThreeDCarousel } from "@/components/ui/3d-carousel";
-import FallingText from "@/components/FallingText";
 import ASCIIText from "@/components/ASCIIText";
+import ColorBends from "@/components/ColorBends";
 import game from "@/assets/img/game.jpg";
 import getthawha from "@/assets/img/getthawha.jpg";
 import pokebay from "@/assets/img/pokebay.jpg";
@@ -55,28 +55,34 @@ const projects = [
 
 const Index = () => {
     return (
-        <div className="min-h-screen relative overflow-hidden bg-black">
+        <div>
+            {/* Background gradient / bends behind everything */}
+            <ColorBends
+                className="min-h-screen relative overflow-hidden bg-fuchsia-100 z-0 "
+                colors={["#ff0000", "#ff7f00", "#ffff00", "#00ff00", "#00ffff", "#0000ff", "#8a2be2", "#ff00ff"]}
+                rotation={42}
+                autoRotate={-2}
+                speed={0.23}
+                scale={0.8}
+                frequency={1}
+                warpStrength={1}
+                mouseInfluence={0.8}
+                parallax={0.6}
+                noise={0.08}
+                transparent
+            />
+
+            {/* 3D carousel layer */}
             <div className="absolute inset-0">
                 <ThreeDCarousel projects={projects} />
             </div>
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] h-48 z-40">
+
+            {/* ASCII title overlay */}
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] h-48 z-40 pointer-events-none">
                 <ASCIIText
                     text='My Projects'
                     enableWaves={true}
-                    asciiFontSize={8}
-                />
-            </div>
-            <div className="fixed inset-0 h-screen w-screen pointer-events-none z-50">
-                <FallingText
-                    text="Welcome to my portfolio. I build modern web applications with creative technologies."
-                    highlightWords={["Welcome", "portfolio", "build", "modern", "creative"]}
-                    highlightClass="text-blue-500 font-bold"
-                    trigger="auto"
-                    backgroundColor="transparent"
-                    wireframes={false}
-                    gravity={0.56}
-                    fontSize="1.5rem"
-                    mouseConstraintStiffness={0.9}
+                    asciiFontSize={3}
                 />
             </div>
         </div>

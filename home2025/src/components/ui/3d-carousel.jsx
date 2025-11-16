@@ -88,10 +88,10 @@ function Card({ url, project, ...props }) {
       </Image>
       
       {/* Text overlay using 3D text so it follows the card */}
-      <group position={[0, 0, 0.06]}>
+      <group position={[0, 0.3, 0.06]}>
         <Text
           ref={titleRef}
-          position={[0, 0.28, 0]}
+          position={[0, 0.15, 0]}
           fontSize={0.09}
           color="#000000"
           anchorX="center"
